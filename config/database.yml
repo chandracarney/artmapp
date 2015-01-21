@@ -58,7 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: art_r_test
+  database: artmapp_test
   pool: 5
   timeout: 5000
 
@@ -83,12 +83,12 @@ test:
 #
 production:
   <<: *default
-  database: art_r_production
+  database: artmapp_production
   pool: 5
   timeout: 5000
 
 staging:
   <<: *default
-  database: art_r_staging
+  database: artmapp_staging
   pool: 5
   timeout: 5000

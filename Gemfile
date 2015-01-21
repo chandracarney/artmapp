@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.7'
+gem 'dotenv-deployment', group: :production
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -16,8 +18,6 @@ gem 'omniauth-twitter'
 gem 'simplecov', :require => false, :group => :test
 gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'dotenv-deployment', group: :production
 
 group :development, :test, :staging do
   gem 'web-console'
