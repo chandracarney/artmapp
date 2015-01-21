@@ -1,0 +1,6 @@
+<div class="artist-show-container">
+  <p><%= @artist.name %>, <%= @artist.gender %></p>
+  <p><%= @artist.blurb %></p>
+  <p><%= button_to 'Follow', artist_user_artist_ratings_path(@artist) %></p>
+  <p><%= button_to 'Skip', artist_user_artist_ratings_path(@artist) %></p>
+</div>

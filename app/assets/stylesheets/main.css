@@ -1,0 +1,104 @@
+/*fonts*/
+@import url(http://fonts.googleapis.com/css?family=Righteous|Open+Sans:700,400);
+
+/*body*/
+body {
+  background-color: #FFF0E0;
+  font-family: 'Open Sans';
+}
+
+/*navbar*/
+.header-logo {
+  font-family: 'Righteous', sans-serif;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.header-container {
+  display: flex;
+  padding: 0 20px;
+  border-bottom: 2px solid rgba(255,255,255,.6);
+  background: rgba(255,255,255,.6);
+}
+
+.header-container > nav {
+  width: 100%;
+  height: 35px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav > ul {
+  display: inline-block;
+}
+
+nav > ul > li {
+  display: inline;
+  padding: 0 10px 10px;
+}
+
+.header-container a {
+  text-decoration: none;
+  color: #333
+}
+
+/*homepage*/
+.home-image {
+  width: 100%;
+  height: 550px;
+  border-bottom: 10px solid #FFFFFF;
+  background: url('/assets/main-trees-art.jpg') center center no-repeat;
+  position: absolute;
+  top: 0;
+  z-index: -5;
+}
+
+.home-image h1 {
+  float: left;
+  padding: 100px;
+}
+
+/*user-page*/
+.user-container {
+  padding: 0 20px;
+}
+
+.user-container a {
+  text-decoration: none;
+}
+
+.artwork-follow-container {
+  text-align: center;
+  padding: 0 50px;
+  width: 40%;
+  float: left;
+}
+
+.artist-follow-container {
+  text-align: center;
+  padding: 20px;
+  width: 40%;
+}
+
+/*artwork-show*/
+.artwork-show-container {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.artwork-show-container p {
+}
+
+.image-show {
+  max-width: 40%;
+}
+
+/*artist-show*/
+.artist-show-container {
+  padding: 0 20px;
+  max-width: 40%;
+  text-align: center;
+}

@@ -1,0 +1,2 @@
+module UserArtworkRatingsHelper
+end
