@@ -5,17 +5,17 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
                 :random_artwork
-                :random_artist
+                # :random_artist
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
   def random_artwork
-    Artwork.no_duplicated_artwork_shown
+    Artwork.random
   end
 
-  def random_artist
-    Artist.random
-  end
+  # def random_artist
+  #   Artist.random_unseen_by(user_id)
+  # end
 end

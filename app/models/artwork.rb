@@ -6,19 +6,23 @@ class Artwork < ActiveRecord::Base
     limit(1).order("RANDOM()").first
   end
 
+  # def self.random_unseen_by(user_id)
+  #   order("RANDOM()")
+  #   reject { |artwork| artwork.rated_by?(user_id) }.limit(1).first
+  # end
+
   # def no_duplicated_artwork_shown(user_id)
-  #   #work has many likes
-  #   work = limit(1).order("RANDOM()").first
-  #   user_ids = work.likes.map { |like| like.user_id }
+  #   artwork = limit(1).order("RANDOM()").first
+  #   user_ids = artwork.user_artowrk_ratings.map { |like| like.user_id }
   #   while user_ids.include?(user_id)
-  #     work = limit(1).order("RANDOM()").first
-  #     user_ids = work.likes.map { |like| like.user_id }
+  #     artwork = limit(1).order("RANDOM()").first
+  #     user_ids = artwork.user_artwork_ratings.map { |like| like.user_id }
   #   end
-  #   work
-  #   #likes belong to a user
+  #   artwork
+  #   #ratings belong to a user
   #   #all worked liked by user should not be shown
   # end
   #
-  # # want to knoww a work wont show again if it skipped or liked
+  # # ensure an artwork won't show again if it skipped or liked
   # # this is based off of the user viewing the work
 end

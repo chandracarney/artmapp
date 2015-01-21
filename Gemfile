@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.7'
 gem 'dotenv-deployment', group: :production
 gem 'dotenv-rails', groups: [:development, :test]
@@ -25,10 +24,8 @@ group :development, :test, :staging do
   gem 'factory_girl_rails'
   gem 'selenium-webdriver', '~> 2.44.0'
   gem 'launchy'
-  gem 'factory_girl_rails'
-  gem 'selenium-webdriver', '~> 2.44.0'
-  gem 'launchy'
   gem 'pry'
+  gem 'rspec-rails'
 end
 
 group :development do
