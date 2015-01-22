@@ -1,28 +1,34 @@
 <div class="user-container">
   <h2>Welcome, <%= @user.name %></h2>
-  <h4>Artworks you like</h4>
-  <% if @user.user_artwork_ratings.empty? %>
-  <h5>You don't like any artworks yet. <%= link_to "Get started!", artwork_path %></h5>
-  <% else %>
-  <p><%= link_to "Find more artwork!", artwork_path, class: "button" %></p>
-  <% @user.user_artwork_ratings.each do |artwork_rating| %>
-  <%= artwork_rating.artwork.artist.name %><br>
-  <%= artwork_rating.artwork.title %><br>
-  <%= artwork_rating.artwork.date %><br>
-  <p><%= link_to image_tag("medium.jpg"), "#{artwork_rating.artwork.image}" %></p><br>
-  <% end %>
-  <% end %>
-  <h4>Artists you follow</h4>
-  <% if @user.user_artist_ratings.empty? %>
-  <h5>You don't follow any artists yet. <%= link_to "Need suggestions?", artist_path %></h5>
-  <% else %>
-  <p><%= link_to "Follow more artists!", artist_path, class: "button" %></p>
-  <% @user.user_artist_ratings.each do |artist_rating| %>
-  <div class="artist-follow-container">
-    <%= artist_rating.artist.name %><br>
-    <%= artist_rating.artist.gender %><br>
-    <%= artist_rating.artist.blurb %><br>
+  <div class="user-artowrk-container">
+    <h4>Artworks you like</h4>
+    <% if @user.user_artwork_ratings.empty? %>
+      <h5>You don't like any artworks yet. <%= link_to "Get started!", artwork_path %></h5>
+    <% else %>
+      <p><%= link_to "Find more artwork!", artwork_path, class: "button" %></p>
+        <% @user.user_artwork_ratings.each do |artwork_rating| %>
+        <div class="artwork-follow-container">
+          <%= artwork_rating.artwork.artist.name %><br>
+          <%= artwork_rating.artwork.title %><br>
+          <%= artwork_rating.artwork.date %><br>
+          <p><%= link_to image_tag("medium.jpg"), "#{artwork_rating.artwork.image}" %></p><br>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <% end %>
-  <% end %>
+  <div class="user-artist-container">
+    <h4>Artists you follow</h4>
+    <% if @user.user_artist_ratings.empty? %>
+    <h5>You don't follow any artists yet. <%= link_to "Need suggestions?", artist_path %></h5>
+    <% else %>
+    <p><%= link_to "Follow more artists!", artist_path, class: "button" %></p>
+    <% @user.user_artist_ratings.each do |artist_rating| %>
+    <div class="artist-follow-container">
+      <%= artist_rating.artist.name %><br>
+      <%= artist_rating.artist.gender %><br>
+      <%= artist_rating.artist.blurb %><br>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
