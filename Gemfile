@@ -17,6 +17,9 @@ gem 'omniauth-twitter'
 gem 'simplecov', :require => false, :group => :test
 gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
+gem 'httparty'
+gem 'sidekiq'
+gem 'sidetiq'
 
 group :development, :test, :staging do
   gem 'web-console'
@@ -28,9 +31,15 @@ group :development, :test, :staging do
   gem 'rspec-rails'
 end
 
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'foreman'
 end
 
 # Use Capistrano for deployment
