@@ -58,11 +58,30 @@ nav > ul > li {
   z-index: -5;
 }
 
-.home-text h1 {
-  float: left;
-  padding: 100px;
+h1.home-text {
+  left: 10%;
+  top: 20%;
   z-index: 1;
-  position: absolute;
+  position: relative;
+  line-height: 1.25em;
+  font-size: 50px;
+  color: #EFEFEF;
+}
+
+.home-login {
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  position: relative;
+  left: 10%;
+  text-decoration: none;
+  color: 999;
+  padding: 5px;
+}
+
+.anchor-login {
+  position: relative;
+  left: 10%;
+  width: 100px;
 }
 
 /*user-page*/
@@ -88,6 +107,7 @@ nav > ul > li {
   border: 1px solid black;
   margin: 20px;
   float: left;
+  border-radius: 4px;
 }
 
 .artist-follow-container {
@@ -97,20 +117,25 @@ nav > ul > li {
   border: 1px solid black;
   margin:40px;
   float: left;
+  border-radius: 4px;
 }
 
 .user-artist-container {
+  margin: 5px;
   clear: both;
   width: 100%;
   padding: 5px;
   border: 3px solid black;
+  border-radius: 4px;
 }
 
 .user-artowrk-container {
+  margin: 5px;
   clear: both;
   width: 100%;
   padding: 5px;
   border: 3px solid black;
+  border-radius: 4px;
 }
 
 /*artwork-page*/
@@ -124,6 +149,14 @@ nav > ul > li {
 
 .image-show {
   max-width: 40%;
+}
+
+.like-button {
+  display: inline-block;
+}
+
+.skip-button {
+  display: inline-block;
 }
 
 /*artist-page*/
