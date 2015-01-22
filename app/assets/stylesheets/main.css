@@ -62,7 +62,7 @@ nav > ul > li {
 .home-text h1 {
   float: left;
   padding: 100px;
-  z-index: ;
+  z-index: 1;
   position: absolute;
 }
 
