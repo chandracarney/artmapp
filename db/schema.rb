@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150118180750) do
   end
 
   create_table "artworks", force: true do |t|
-    t.string   "api_id"
     t.string   "title"
     t.string   "date"
     t.string   "image"
