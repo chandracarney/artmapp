@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
     end
     user
   end
+  
+  # def self.unseen_artwork
+  #   Artwork.where.not(:id => user_artwork_ratings.pluck(:artwork_id)).limit(1).order("RANDOM()").first
+  # end
 
   private
 

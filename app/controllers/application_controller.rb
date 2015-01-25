@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def random_artwork
-    Artwork.random
+    Artwork.random_unseen_by(@current_user)
   end
 
   # def random_artist
