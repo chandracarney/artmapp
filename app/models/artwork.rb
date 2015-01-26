@@ -2,6 +2,8 @@ class Artwork < ActiveRecord::Base
   belongs_to :artist
   has_many :user_artwork_ratings
 
+  validates :artsy_artwork_id, uniqueness: true
+
   def self.random_unseen_by(user)
     Artwork.where.not(:id => user.user_artwork_ratings.pluck(:artwork_id)).limit(1).order("RANDOM()").first
   end

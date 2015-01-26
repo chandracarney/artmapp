@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
                 :random_artwork
-                # :random_artist
+                :random_artist
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     Artwork.random_unseen_by(@current_user)
   end
 
-  # def random_artist
-  #   Artist.random_unseen_by(user_id)
-  # end
+  def random_artist
+    Artist.random_unseen_by(@current_user)
+  end
 end
