@@ -6,9 +6,8 @@ class CreateArtworks < ActiveRecord::Migration
       t.string :image
       t.string :category
       t.string :medium
-      t.string :genes
       t.string :collecting_institution
-      t.integer :artist_id
+      t.string :artsy_artwork_id
 
       t.timestamps
     end

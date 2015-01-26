@@ -6,6 +6,7 @@ class CreateArtists < ActiveRecord::Migration
       t.string :biography
       t.string :blurb
       t.string :gender
+      t.string :artsy_artist_id
 
       t.timestamps
     end
