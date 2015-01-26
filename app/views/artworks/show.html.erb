@@ -1,8 +1,10 @@
 <div class="artwork-show-container">
   <p><%= @artwork.artist.name %></p>
+  <div><%= link_to image_tag("medium.jpg", class: "image-show"), "#{@artwork.image}" %></div>
   <i><%= @artwork.title %> &mdash;</i>
   <%= @artwork.date %>
-  <p><%= link_to image_tag("medium.jpg", class: "image-show"), "#{@artwork.image}" %>
-    <%= button_to 'Like', artwork_user_artwork_ratings_path(@artwork), class: "like-button" %>
+  <div class="artwork-actions">
     <%= button_to 'Skip', artwork_user_artwork_ratings_path(@artwork), class: "skip-button" %>
+    <%= button_to 'Like', artwork_user_artwork_ratings_path(@artwork), class: "like-button" %>
+  </div>
   </div>

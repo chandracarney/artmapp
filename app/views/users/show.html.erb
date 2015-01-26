@@ -1,27 +1,36 @@
 <div class="user-container">
-  <h2>Welcome, <%= @user.name %></h2>
+  <div class="username">
+    <h2>Welcome, <%= @user.name %></h2>
+  </div>
   <div class="user-artowrk-container">
-    <h4>Artworks you like</h4>
-    <% if @user.user_artwork_ratings.empty? %>
-      <h5>You don't like any artworks yet. <%= link_to "Get started!", artwork_path %></h5>
-    <% else %>
-      <p><%= link_to "Find more artwork!", artwork_path, class: "button" %></p>
+    <div class="user-section-header">
+      <h4 class="user-section-title">Artworks you like</h4>
+      <% if @user.user_artwork_ratings.empty? %>
+        <h5>You don't like any artworks yet. <%= link_to "Get started!", artwork_path, class: "button find-more" %></h5>
+      <% else %>
+        <%= link_to "Find more", artwork_path, class: "button find-more" %>
+    </div>
         <% @user.user_artwork_ratings.each do |artwork_rating| %>
         <div class="artwork-follow-container">
-          <%= artwork_rating.artwork.artist.name %><br>
-          <%= artwork_rating.artwork.title %><br>
-          <%= artwork_rating.artwork.date %><br>
-          <p><%= link_to image_tag("medium.jpg"), "#{artwork_rating.artwork.image}" %></p><br>
+          <h5 class="artwork-artist-name"><%= artwork_rating.artwork.artist.name %></h5>
+          <div class="artwork-image-container"><%= link_to image_tag("medium.jpg"), "#{artwork_rating.artwork.image}" %></div>
+          <div class="artwork-follow-description">
+            <p class="artwork-title"><%= artwork_rating.artwork.title %></p>
+            <p class="artwork-date"><%= artwork_rating.artwork.date %></p>
+          </div>
         </div>
       <% end %>
+        <div class="clear"></div>
     <% end %>
   </div>
   <div class="user-artist-container">
-    <h4>Artists you follow</h4>
-    <% if @user.user_artist_ratings.empty? %>
-    <h5>You don't follow any artists yet. <%= link_to "Need suggestions?", artist_path %></h5>
-    <% else %>
-    <p><%= link_to "Follow more artists!", artist_path, class: "button" %></p>
+    <div class="user-section-header">
+      <h4 class="user-section-title">Artists you follow</h4>
+      <% if @user.user_artist_ratings.empty? %>
+      <h5>You don't follow any artists yet. <%= link_to "Need suggestions?", artist_path, class: "button find-more" %></h5>
+      <% else %>
+        <%= link_to "Follow more", artist_path, class: "button find-more" %>
+    </div>
     <% @user.user_artist_ratings.each do |artist_rating| %>
     <div class="artist-follow-container">
       <%= artist_rating.artist.name %><br>
