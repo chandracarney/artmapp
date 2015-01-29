@@ -6,8 +6,7 @@ class Artist < ActiveRecord::Base
   validates :artsy_artist_id, uniqueness: true
 
   def name_or_unknown
-    require 'pry' ; binding.pry
-    unless self.name.empty?
+    if self.name.empty?
       "Unknown Artist"
     else
       self.name

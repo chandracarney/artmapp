@@ -19,6 +19,4 @@ describe Artsy do
       end
     end
   end
-
-  # describe "art"
 end
