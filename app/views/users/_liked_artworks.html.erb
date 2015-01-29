@@ -1,0 +1,25 @@
+<% if @user.user_artwork_ratings.empty? %>
+<div class="user-section-header">
+  <h5>Looks don't like any artworks yet.</h5>
+  <%= link_to "Get started", artwork_path(@user.unseen_artwork), class: "button find-more" %>
+</div>
+<% else %>
+<div id="section-header">
+  <h4 class="user-section-title">Artworks you like</h4>
+  <%= link_to "Find more", artwork_path(@user.unseen_artwork), class: "button find-more occupied" %>
+  <div class="clear"></div>
+</div>
+<% @user.liked_artworks.each do |artwork_rating| %>
+<div class="artwork-follow-container">
+  <% artwork_rating.artwork.artists.each do |artist| %>
+  <h5 class="artwork-artist-name"><%= artist.name_or_unknown %></h5>
+  <% end %>
+  <div class="artwork-image-container"><%= link_to image_tag(artwork_rating.artwork.image), "#{artwork_rating.artwork.image}", class: "lightbox-image" %></div>
+  <div class="artwork-follow-description">
+    <p class="artwork-title"><%= artwork_rating.artwork.title %></p>
+    <p class="artwork-date"><%= artwork_rating.artwork.date %></p>
+  </div>
+</div>
+<% end %>
+<div class="clear"></div>
+<% end %>

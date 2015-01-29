@@ -223,9 +223,18 @@ h1.home-text {
 }
 
 .section-header {
-  
+
 }
 
+
+.lightbox-image {
+  padding: 0;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1102;
+  border: 0px solid #fff;
+}
 
 /*artwork-page*/
 .artwork-show-container {

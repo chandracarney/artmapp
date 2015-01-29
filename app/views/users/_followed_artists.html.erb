@@ -1,0 +1,19 @@
+<% if @user.user_artist_ratings.empty? %>
+  <div class="user-section-header">
+    <h5>You don't follow any artists yet.</h5>
+    <%= link_to "Need suggestions?", artist_path(@user.unseen_artist), class: "button find-more" %>
+  </div>
+  <% else %>
+  <div id="section-header">
+    <h4 class="user-section-title">Artists you follow</h4>
+    <%= link_to "Follow more", artist_path(@user.unseen_artist), class: "button find-more occupied" %>
+  </div>
+  <div class="clear"></div>
+  <% @user.liked_artists.each do |artist_rating| %>
+  <div class="artist-follow-container">
+    <%= artist_rating.artist.name %><br>
+    <%= artist_rating.artist.gender %><br>
+    <%= artist_rating.artist.blurb %><br>
+  </div>
+  <% end %>
+<% end %>
