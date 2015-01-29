@@ -44,7 +44,8 @@ class ArtworkImporter
       location:        artist["location"],
       hometown:        artist["hometown"],
       nationality:     artist["nationality"],
-      birthday:     artist["birthday"]
+      birthday:        artist["birthday"],
+      genes:           artist["genes"]
     }
   end
 end
