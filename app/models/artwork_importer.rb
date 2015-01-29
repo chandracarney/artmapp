@@ -1,7 +1,7 @@
 class ArtworkImporter
   def import
     artworks = []
-    Artsy.new.artworks(1000).each do |artwork|
+    Artsy.new.artworks(500).each do |artwork|
       if artwork && artwork["_links"]["thumbnail"]
         new_artwork = Artwork.where(artsy_artwork_id: artwork["id"]).first_or_initialize
         if new_artwork.new_record?
@@ -10,7 +10,6 @@ class ArtworkImporter
         end
       end
     end
-    artworks
     artworks.each do |artwork|
       artists = Artsy.new.artists_for(artwork)
       artists.each do |artist|
@@ -40,9 +39,12 @@ class ArtworkImporter
   def artist_params(artist)
     {
       artsy_artist_id: artist["id"],
-      name:            artist["name"],
+      name:            artist["name"] || "Unknown Artist",
       gender:          artist["gender"],
-      location:        artist["location"]
+      location:        artist["location"],
+      hometown:        artist["hometown"],
+      nationality:     artist["nationality"],
+      birthday:     artist["birthday"]
     }
   end
 end

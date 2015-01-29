@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20150126222333) do
   create_table "artists", force: true do |t|
     t.string   "name"
     t.string   "location"
-    t.string   "biography"
-    t.string   "blurb"
+    t.string   "birthday"
+    t.string   "hometown"
     t.string   "gender"
+    t.string   "nationality"
+    t.string   "genes"
     t.string   "artsy_artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"

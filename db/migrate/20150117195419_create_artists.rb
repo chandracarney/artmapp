@@ -3,9 +3,11 @@ class CreateArtists < ActiveRecord::Migration
     create_table :artists do |t|
       t.string :name
       t.string :location
-      t.string :biography
-      t.string :blurb
+      t.string :birthday
+      t.string :hometown
       t.string :gender
+      t.string :nationality
+      t.string :genes
       t.string :artsy_artist_id
 
       t.timestamps
