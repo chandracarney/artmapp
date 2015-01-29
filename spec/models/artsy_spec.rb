@@ -14,9 +14,11 @@ describe Artsy do
   describe "#artists" do
     it "fetches artists from the API" do
       VCR.use_cassette("artists") do
-        artists = Artsy.new.artists
+        artists = Artsy.new.artists_for(artwork)
         expect(artists[0]["id"]).to be_a(String)
       end
     end
   end
+
+  # describe "art"
 end

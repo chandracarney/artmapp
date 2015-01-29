@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def random_artist
-    Artist.random_unseen_by(@current_user)
+    @current_user.unseen_artist
   end
 end

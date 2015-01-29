@@ -2,18 +2,22 @@
   <div class="username">
     <h2>Welcome, <%= @user.name %></h2>
   </div>
-  <div class="user-artowrk-container">
-    <div class="user-section-header">
-      <h4 class="user-section-title">Artworks you like</h4>
-      <% if @user.user_artwork_ratings.empty? %>
-        <h5>You don't like any artworks yet. <%= link_to "Get started!", artwork_path(Artwork.random_unseen_by(@user)), class: "button find-more" %></h5>
-      <% else %>
-        <%= link_to "Find more", artwork_path(@user.unseen_artwork), class: "button find-more" %>
-    </div>
-        <% @user.liked_artworks.each do |artwork_rating| %>
+  <div class="user-artwork-container">
+    <% if @user.user_artwork_ratings.empty? %>
+      <div class="user-section-header">
+        <h5>Looks don't like any artworks yet.</h5>
+        <%= link_to "Get started", artwork_path(@user.unseen_artwork), class: "button find-more" %>
+      </div>
+    <% else %>
+      <div id="section-header">
+        <h4 class="user-section-title">Artworks you like</h4>
+        <%= link_to "Find more", artwork_path(@user.unseen_artwork), class: "button find-more occupied" %>
+        <div class="clear"></div>
+      </div>
+      <% @user.liked_artworks.each do |artwork_rating| %>
         <div class="artwork-follow-container">
           <% artwork_rating.artwork.artists.each do |artist| %>
-            <h5 class="artwork-artist-name"><%= artist.name %></h5>
+            <h5 class="artwork-artist-name"><%= artist.name_or_unknown %></h5>
           <% end %>
           <div class="artwork-image-container"><%= link_to image_tag(artwork_rating.artwork.image), "#{artwork_rating.artwork.image}" %></div>
           <div class="artwork-follow-description">
@@ -22,24 +26,28 @@
           </div>
         </div>
       <% end %>
-        <div class="clear"></div>
+      <div class="clear"></div>
     <% end %>
   </div>
   <div class="user-artist-container">
-    <div class="user-section-header">
-      <h4 class="user-section-title">Artists you follow</h4>
-      <% if @user.user_artist_ratings.empty? %>
-      <h5>You don't follow any artists yet. <%= link_to "Need suggestions?", artist_path, class: "button find-more" %></h5>
-      <% else %>
-        <%= link_to "Follow more", artist_path, class: "button find-more" %>
-    </div>
-    <% @user.user_artist_ratings.each do |artist_rating| %>
-    <div class="artist-follow-container">
-      <%= artist_rating.artist.name %><br>
-      <%= artist_rating.artist.gender %><br>
-      <%= artist_rating.artist.blurb %><br>
-    </div>
-    <% end %>
+    <% if @user.user_artist_ratings.empty? %>
+      <div class="user-section-header">
+        <h5>You don't follow any artists yet.</h5>
+        <%= link_to "Need suggestions?", artist_path(@user.unseen_artwork), class: "button find-more" %>
+      </div>
+    <% else %>
+      <div id="section-header">
+        <h4 class="user-section-title">Artists you follow</h4>
+        <%= link_to "Follow more", artist_path(@user.unseen_artwork), class: "button find-more occupied" %>
+      </div>
+      <div class="clear"></div>
+      <% @user.liked_artists.each do |artist_rating| %>
+        <div class="artist-follow-container">
+          <%= artist_rating.artist.name %><br>
+          <%= artist_rating.artist.gender %><br>
+          <%= artist_rating.artist.blurb %><br>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

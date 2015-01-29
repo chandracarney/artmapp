@@ -5,7 +5,7 @@ class Artist < ActiveRecord::Base
 
   validates :artsy_artist_id, uniqueness: true
 
-  def self.random
-    Artist.where.not(:id => user.user_artist_ratings.pluck(:artwork_id)).limit(1).order("RANDOM()").first
+  def name_or_unknown
+    self.name || "Unknown Artist"
   end
 end

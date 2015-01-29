@@ -15,8 +15,16 @@ class User < ActiveRecord::Base
     user_artwork_ratings.where(rating: 1)
   end
 
+  def liked_artists
+    user_artist_ratings.where(rating: 1)
+  end
+
   def unseen_artwork
     Artwork.where.not(:id => user_artwork_ratings.pluck(:artwork_id)).limit(1).order("RANDOM()").first
+  end
+
+  def unseen_artist
+    Artist.where.not(:id => user_artist_ratings.pluck(:artist_id)).limit(1).order("RANDOM()").first
   end
 
   private
