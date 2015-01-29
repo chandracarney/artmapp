@@ -1,7 +1,7 @@
 <div class="artwork-show-container">
   <p><%= @artist.name %>: <%= @artist.gender %></p>
   <b>Location practiced:</b> <%= @artist.location %></br>
-  <b>Hometown:</b> <%= @artist.hometown %>.</br>
+  <b>Hometown:</b> <%= @artist.hometown %></br>
   <p><%= button_to 'Follow', artist_user_artist_ratings_path(@artist), params: { rating: 1 }, class: "like-button" %></p>
   <p><%= button_to 'Skip', artist_user_artist_ratings_path(@artist), params: { rating: -1 }, class: "skip-button" %></p>
 </div>

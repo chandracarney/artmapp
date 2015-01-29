@@ -11,11 +11,10 @@
   <div class="clear"></div>
     <% @user.liked_artists.each do |artist_rating| %>
     <div class="artist-follow-container">
-      <%= artist_rating.artist.name %><br>
-      <%= artist_rating.artist.gender %><br>
-      <%= artist_rating.artist.location %><br>
+      <%= artist_rating.artist.name %>: <%= artist_rating.artist.gender %><br>
       <%= artist_rating.artist.nationality %><br>
-      <%= artist_rating.artist.hometown %><br>
+      Location: <%= artist_rating.artist.location %><br>
+      Hometown: <%= artist_rating.artist.hometown %><br>
     </div>
   <% end %>
 <% end %>
