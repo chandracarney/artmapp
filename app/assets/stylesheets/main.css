@@ -190,6 +190,7 @@ h1.home-text {
   background: white;
   border-top: 1px solid #ccc;
   padding: 25px 5px;
+  padding-bottom: ;
 }
 
 .button.find-more {
@@ -237,20 +238,19 @@ h1.home-text {
 
 /*artwork-page*/
 .artwork-show-container {
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
   text-align: center;
-}
-
-.artwork-show-container p {
 }
 
 .image-show {
   max-width: 40%;
+  max-height: 500px;
 }
 
 .like-button {
   display: inline-block;
 }
+
 
 .skip-button {
   display: inline-block;
@@ -259,7 +259,13 @@ h1.home-text {
 .artwork-actions form,
 .artwork-actions > form > div {
   display: inline-block;
+  padding: 10px 5px;
 }
+
+/*.artworks-container {
+  background-color: black;
+  color: #EFEFEF;
+}*/
 
 .like-button,
 .skip-button {

@@ -12,9 +12,4 @@ def artworks(size=300)
     artists = self.class.get("/artists?artwork_id=#{artwork.artsy_artwork_id}", :headers => { "X-XAPP-Token" => ENV['ARTSY_XAPP_TOKEN']})
     artists["_embedded"]["artists"] || []
   end
-
-  # def artists
-  #   artists = self.class.get("/artists", :headers => { "X-XAPP-Token" => ENV['ARTSY_XAPP_TOKEN']})
-  #   artists["_embedded"]["artists"]
-  # end
 end
